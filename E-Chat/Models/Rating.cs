@@ -9,7 +9,9 @@ namespace E_Chat.Models
         public string Feedback { get; set; }
         public string Date { get; set; }
         public string Time { get; set; }
+        public string Score { get; set; }
 
-             
+
+
     }
 }

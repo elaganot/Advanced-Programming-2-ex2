@@ -9,8 +9,9 @@ namespace E_Chat.Models
         public string UserName { get; set; }
         [Required]
         public string Name { get; set; }
-      
-        //image
+
+        public string Picture { get; set; }
+
         public List<Message> Messages { get; set; }
     }
 }

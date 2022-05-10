@@ -31,7 +31,7 @@ namespace E_Chat.Controllers
                 ratings = ratings.Where(s => s.Name!.Contains(searchString));
             }
 
-            return View(await _context.Rating.ToListAsync());
+            return View(await ratings.ToListAsync());
         }
 
         // GET: Ratings/Details/5
@@ -63,7 +63,7 @@ namespace E_Chat.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Name,Feedback,Date,Time")] Rating rating)
+        public async Task<IActionResult> Create([Bind("Name,Feedback,Date,Time,Score")] Rating rating)
         {
             if (ModelState.IsValid)
             {
@@ -96,11 +96,13 @@ namespace E_Chat.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("Name,Feedback,Date,Time")] Rating rating)
+        public async Task<IActionResult> Edit(string id, [Bind("Name,Feedback,Date,Time,Score")] Rating rating)
         {
             if (id != rating.Name)
             {
                 return NotFound();
+                rating.Time = DateTime.Now.ToString("HH:mm");
+                rating.Date = DateTime.Now.ToString("dd / MM / yyyy");
             }
 
             if (ModelState.IsValid)
