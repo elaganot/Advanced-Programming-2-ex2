@@ -20,8 +20,17 @@ namespace E_Chat.Controllers
         }
 
         // GET: Ratings
-        public async Task<IActionResult> Index(string Id)
+        public async Task<IActionResult> Index(string searchString)
         {
+
+            var ratings = from rating in _context.Rating
+                          select rating;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                ratings = ratings.Where(s => s.Name!.Contains(searchString));
+            }
+
             return View(await _context.Rating.ToListAsync());
         }
 
