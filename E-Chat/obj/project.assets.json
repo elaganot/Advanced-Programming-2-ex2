@@ -9652,19 +9652,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Edenh\\.nuget\\packages\\": {}
+    "C:\\Users\\rachip\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Edenh\\Desktop\\AP2\\fotube\\E-Chat\\E-Chat\\E-Chat.csproj",
+      "projectUniqueName": "C:\\Users\\rachip\\Source\\Repos\\Advanced-Programming-2-ex2\\E-Chat\\E-Chat.csproj",
       "projectName": "E-Chat",
-      "projectPath": "C:\\Users\\Edenh\\Desktop\\AP2\\fotube\\E-Chat\\E-Chat\\E-Chat.csproj",
-      "packagesPath": "C:\\Users\\Edenh\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Edenh\\Desktop\\AP2\\fotube\\E-Chat\\E-Chat\\obj\\",
+      "projectPath": "C:\\Users\\rachip\\Source\\Repos\\Advanced-Programming-2-ex2\\E-Chat\\E-Chat.csproj",
+      "packagesPath": "C:\\Users\\rachip\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\rachip\\Source\\Repos\\Advanced-Programming-2-ex2\\E-Chat\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Edenh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\rachip\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

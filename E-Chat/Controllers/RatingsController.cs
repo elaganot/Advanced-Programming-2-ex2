@@ -20,7 +20,7 @@ namespace E_Chat.Controllers
         }
 
         // GET: Ratings
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string Id)
         {
             return View(await _context.Rating.ToListAsync());
         }
