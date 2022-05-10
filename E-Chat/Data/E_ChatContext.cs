@@ -15,5 +15,13 @@ namespace E_Chat.Data
         }
 
         public DbSet<E_Chat.Models.Rating> Rating { get; set; }
+
+        public DbSet<E_Chat.Models.Contact> Contact { get; set; }
+
+        public DbSet<E_Chat.Models.Message> Message { get; set; }
+
+        public DbSet<E_Chat.Models.User> User { get; set; }
+
+        public DbSet<E_Chat.Models.UserList> Users { get; set; }
     }
 }
