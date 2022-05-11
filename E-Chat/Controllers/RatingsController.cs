@@ -67,6 +67,8 @@ namespace E_Chat.Controllers
         {
             if (ModelState.IsValid)
             {
+                rating.Time = DateTime.Now.ToString("HH:mm");
+                rating.Date = DateTime.Now.ToString("dd/MM/yyyy");
                 _context.Add(rating);
 
                 await _context.SaveChangesAsync();
