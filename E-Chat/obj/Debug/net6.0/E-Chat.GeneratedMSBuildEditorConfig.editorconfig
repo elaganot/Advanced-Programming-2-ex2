@@ -8,157 +8,157 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = E_Chat
 build_property.RootNamespace = E_Chat
-build_property.ProjectDir = C:\Users\rachip\Source\Repos\Advanced-Programming-2-ex2\E-Chat\
+build_property.ProjectDir = C:\Users\rachip\source\repos\Advanced-Programming-2-ex2\E-Chat\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\rachip\Source\Repos\Advanced-Programming-2-ex2\E-Chat
+build_property.MSBuildProjectDirectory = C:\Users\rachip\source\repos\Advanced-Programming-2-ex2\E-Chat
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/rachip/Source/Repos/Advanced-Programming-2-ex2/E-Chat/Views/Contacts/Create.cshtml]
+[C:/Users/rachip/source/repos/Advanced-Programming-2-ex2/E-Chat/Views/Contacts/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rachip/Source/Repos/Advanced-Programming-2-ex2/E-Chat/Views/Contacts/Delete.cshtml]
+[C:/Users/rachip/source/repos/Advanced-Programming-2-ex2/E-Chat/Views/Contacts/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdHNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rachip/Source/Repos/Advanced-Programming-2-ex2/E-Chat/Views/Contacts/Details.cshtml]
+[C:/Users/rachip/source/repos/Advanced-Programming-2-ex2/E-Chat/Views/Contacts/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rachip/Source/Repos/Advanced-Programming-2-ex2/E-Chat/Views/Contacts/Edit.cshtml]
+[C:/Users/rachip/source/repos/Advanced-Programming-2-ex2/E-Chat/Views/Contacts/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rachip/Source/Repos/Advanced-Programming-2-ex2/E-Chat/Views/Contacts/Index.cshtml]
+[C:/Users/rachip/source/repos/Advanced-Programming-2-ex2/E-Chat/Views/Contacts/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rachip/Source/Repos/Advanced-Programming-2-ex2/E-Chat/Views/Home/Index.cshtml]
+[C:/Users/rachip/source/repos/Advanced-Programming-2-ex2/E-Chat/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rachip/Source/Repos/Advanced-Programming-2-ex2/E-Chat/Views/Home/Privacy.cshtml]
+[C:/Users/rachip/source/repos/Advanced-Programming-2-ex2/E-Chat/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rachip/Source/Repos/Advanced-Programming-2-ex2/E-Chat/Views/Messages/Create.cshtml]
+[C:/Users/rachip/source/repos/Advanced-Programming-2-ex2/E-Chat/Views/Messages/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVzc2FnZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rachip/Source/Repos/Advanced-Programming-2-ex2/E-Chat/Views/Messages/Delete.cshtml]
+[C:/Users/rachip/source/repos/Advanced-Programming-2-ex2/E-Chat/Views/Messages/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVzc2FnZXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rachip/Source/Repos/Advanced-Programming-2-ex2/E-Chat/Views/Messages/Details.cshtml]
+[C:/Users/rachip/source/repos/Advanced-Programming-2-ex2/E-Chat/Views/Messages/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVzc2FnZXNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rachip/Source/Repos/Advanced-Programming-2-ex2/E-Chat/Views/Messages/Edit.cshtml]
+[C:/Users/rachip/source/repos/Advanced-Programming-2-ex2/E-Chat/Views/Messages/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVzc2FnZXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rachip/Source/Repos/Advanced-Programming-2-ex2/E-Chat/Views/Messages/Index.cshtml]
+[C:/Users/rachip/source/repos/Advanced-Programming-2-ex2/E-Chat/Views/Messages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVzc2FnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rachip/Source/Repos/Advanced-Programming-2-ex2/E-Chat/Views/Ratings/Create.cshtml]
+[C:/Users/rachip/source/repos/Advanced-Programming-2-ex2/E-Chat/Views/Ratings/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmF0aW5nc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rachip/Source/Repos/Advanced-Programming-2-ex2/E-Chat/Views/Ratings/Delete.cshtml]
+[C:/Users/rachip/source/repos/Advanced-Programming-2-ex2/E-Chat/Views/Ratings/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmF0aW5nc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rachip/Source/Repos/Advanced-Programming-2-ex2/E-Chat/Views/Ratings/Details.cshtml]
+[C:/Users/rachip/source/repos/Advanced-Programming-2-ex2/E-Chat/Views/Ratings/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmF0aW5nc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rachip/Source/Repos/Advanced-Programming-2-ex2/E-Chat/Views/Ratings/Edit.cshtml]
+[C:/Users/rachip/source/repos/Advanced-Programming-2-ex2/E-Chat/Views/Ratings/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmF0aW5nc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rachip/Source/Repos/Advanced-Programming-2-ex2/E-Chat/Views/Ratings/Index.cshtml]
+[C:/Users/rachip/source/repos/Advanced-Programming-2-ex2/E-Chat/Views/Ratings/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmF0aW5nc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rachip/Source/Repos/Advanced-Programming-2-ex2/E-Chat/Views/Shared/Error.cshtml]
+[C:/Users/rachip/source/repos/Advanced-Programming-2-ex2/E-Chat/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rachip/Source/Repos/Advanced-Programming-2-ex2/E-Chat/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/rachip/source/repos/Advanced-Programming-2-ex2/E-Chat/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rachip/Source/Repos/Advanced-Programming-2-ex2/E-Chat/Views/UserLists/Create.cshtml]
+[C:/Users/rachip/source/repos/Advanced-Programming-2-ex2/E-Chat/Views/UserLists/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlckxpc3RzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rachip/Source/Repos/Advanced-Programming-2-ex2/E-Chat/Views/UserLists/Delete.cshtml]
+[C:/Users/rachip/source/repos/Advanced-Programming-2-ex2/E-Chat/Views/UserLists/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlckxpc3RzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rachip/Source/Repos/Advanced-Programming-2-ex2/E-Chat/Views/UserLists/Details.cshtml]
+[C:/Users/rachip/source/repos/Advanced-Programming-2-ex2/E-Chat/Views/UserLists/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlckxpc3RzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rachip/Source/Repos/Advanced-Programming-2-ex2/E-Chat/Views/UserLists/Edit.cshtml]
+[C:/Users/rachip/source/repos/Advanced-Programming-2-ex2/E-Chat/Views/UserLists/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlckxpc3RzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rachip/Source/Repos/Advanced-Programming-2-ex2/E-Chat/Views/UserLists/Index.cshtml]
+[C:/Users/rachip/source/repos/Advanced-Programming-2-ex2/E-Chat/Views/UserLists/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlckxpc3RzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rachip/Source/Repos/Advanced-Programming-2-ex2/E-Chat/Views/Users1/Create.cshtml]
+[C:/Users/rachip/source/repos/Advanced-Programming-2-ex2/E-Chat/Views/Users1/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnMxXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rachip/Source/Repos/Advanced-Programming-2-ex2/E-Chat/Views/Users1/Delete.cshtml]
+[C:/Users/rachip/source/repos/Advanced-Programming-2-ex2/E-Chat/Views/Users1/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnMxXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rachip/Source/Repos/Advanced-Programming-2-ex2/E-Chat/Views/Users1/Details.cshtml]
+[C:/Users/rachip/source/repos/Advanced-Programming-2-ex2/E-Chat/Views/Users1/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnMxXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rachip/Source/Repos/Advanced-Programming-2-ex2/E-Chat/Views/Users1/Edit.cshtml]
+[C:/Users/rachip/source/repos/Advanced-Programming-2-ex2/E-Chat/Views/Users1/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnMxXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rachip/Source/Repos/Advanced-Programming-2-ex2/E-Chat/Views/Users1/Index.cshtml]
+[C:/Users/rachip/source/repos/Advanced-Programming-2-ex2/E-Chat/Views/Users1/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnMxXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rachip/Source/Repos/Advanced-Programming-2-ex2/E-Chat/Views/Users/Create.cshtml]
+[C:/Users/rachip/source/repos/Advanced-Programming-2-ex2/E-Chat/Views/Users/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rachip/Source/Repos/Advanced-Programming-2-ex2/E-Chat/Views/Users/Delete.cshtml]
+[C:/Users/rachip/source/repos/Advanced-Programming-2-ex2/E-Chat/Views/Users/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rachip/Source/Repos/Advanced-Programming-2-ex2/E-Chat/Views/Users/Details.cshtml]
+[C:/Users/rachip/source/repos/Advanced-Programming-2-ex2/E-Chat/Views/Users/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rachip/Source/Repos/Advanced-Programming-2-ex2/E-Chat/Views/Users/Edit.cshtml]
+[C:/Users/rachip/source/repos/Advanced-Programming-2-ex2/E-Chat/Views/Users/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rachip/Source/Repos/Advanced-Programming-2-ex2/E-Chat/Views/Users/Index.cshtml]
+[C:/Users/rachip/source/repos/Advanced-Programming-2-ex2/E-Chat/Views/Users/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rachip/Source/Repos/Advanced-Programming-2-ex2/E-Chat/Views/_ViewImports.cshtml]
+[C:/Users/rachip/source/repos/Advanced-Programming-2-ex2/E-Chat/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rachip/Source/Repos/Advanced-Programming-2-ex2/E-Chat/Views/_ViewStart.cshtml]
+[C:/Users/rachip/source/repos/Advanced-Programming-2-ex2/E-Chat/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rachip/Source/Repos/Advanced-Programming-2-ex2/E-Chat/Views/Shared/_Layout.cshtml]
+[C:/Users/rachip/source/repos/Advanced-Programming-2-ex2/E-Chat/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-q8bb4tq4ri

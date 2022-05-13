@@ -3,10 +3,52 @@
 @{
 	ViewData["Title"] = "Index";
 }
+@{
+	int sum = 0, count = 0, avg = 0;
+	foreach (var item in Model)
+	{
+		sum = sum + item.Score;
+		count++;
+	}
 
-<h1>Index</h1>
+	if (count > 0)
+	{
+		avg = sum / count;
 
-<p>
+		<div class="rating-page">
+		<span class="rating-page-title">
+			CUSTOMER REVIEWS
+		</span>
+		<table class="avg">
+			<thead>
+				<tr>
+					<th>
+						AVERAGE RATE: @avg
+					</th>
+				</tr>
+			</thead>
+		</table>
+		</div>
+	}
+	else
+	{
+		<div class="rating-page">
+
+		<h1>CUSTOMER REVIEWS </h1>
+		<table>
+			<thead>
+				<tr>
+					<th>
+						AVERAGE RATE: 0
+					</th>
+				</tr>
+			</thead>
+		</table>
+		</div>
+	}
+}
+<div class="rating-page">
+	<p>
 	<a asp-action="Create">Create New</a>
 </p>
 <form asp-controller="Ratings" asp-action="Index" method="get">
@@ -65,3 +107,4 @@
 		}
 	</tbody>
 </table>
+</div>

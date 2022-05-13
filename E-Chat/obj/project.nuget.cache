@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "b1bUMbHJ5Tz47l8Ge0UEKbR1hkT4dpJ4qBUA1KKxwVW8UlBijQC/nREUcpWlJ793zer3jN4iTVMwmeBv8u7ZIg==",
+  "dgSpecHash": "xwfwHcOgeG6x32iAP2WKKbEzLdI3FjgbdUollllIxebxqvpbdZAtx6CqhMM0krBGSqlUmx0E6mkRG9XOjdAi2Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\rachip\\Source\\Repos\\Advanced-Programming-2-ex2\\E-Chat\\E-Chat.csproj",
+  "projectFilePath": "C:\\Users\\rachip\\source\\repos\\Advanced-Programming-2-ex2\\E-Chat\\E-Chat.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rachip\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\rachip\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",

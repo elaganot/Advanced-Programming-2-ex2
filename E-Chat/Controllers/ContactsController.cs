@@ -7,9 +7,12 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using E_Chat.Data;
 using E_Chat.Models;
+using System.Text;
 
 namespace E_Chat.Controllers
 {
+    [ApiController]
+    [Route("api/[controller]")]
     public class ContactsController : Controller
     {
         private readonly E_ChatContext _context;
@@ -19,135 +22,100 @@ namespace E_Chat.Controllers
             _context = context;
         }
 
-        // GET: Contacts
+        [HttpGet]
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Contact.ToListAsync());
-        }
+            // TODO: implement
 
-        // GET: Contacts/Details/5
-        public async Task<IActionResult> Details(string id)
-        {
-            if (id == null)
+            var value = HttpContext.Session.Get("Name");
+            return Json(new
             {
-                return NotFound();
-            }
-
-            var contact = await _context.Contact
-                .FirstOrDefaultAsync(m => m.UserName == id);
-            if (contact == null)
-            {
-                return NotFound();
-            }
-
-            return View(contact);
+                Name = value
+            });
         }
 
-        // GET: Contacts/Create
-        public IActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Contacts/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("UserName,Name,Picture")] Contact contact)
+        public async Task<IActionResult> Index(Contact newContact)
         {
-            if (ModelState.IsValid)
-            {
-                _context.Add(contact);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(contact);
+            // TODO: implement
+            HttpContext.Session.Set("Name", Encoding.ASCII.GetBytes(newContact.Name));
+            return Ok();
         }
 
-        // GET: Contacts/Edit/5
-        public async Task<IActionResult> Edit(string id)
+        [HttpGet]
+        [Route("{id}")]
+        public async Task<IActionResult> Index(int id)
         {
-            if (id == null)
+            // TODO: implement
+            return Json(new
             {
-                return NotFound();
-            }
-
-            var contact = await _context.Contact.FindAsync(id);
-            if (contact == null)
-            {
-                return NotFound();
-            }
-            return View(contact);
+                Id = id
+            });
         }
 
-        // POST: Contacts/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPut]
+        [Route("{id}")]
+        public async Task<IActionResult> UpdateContact(int id)
+        {
+            // TODO: implement
+            return Ok();
+        }
+
+        [HttpDelete]
+        [Route("{id}")]
+        public async Task<IActionResult> DeleteContact(int id)
+        {
+            // TODO: implement
+            return Ok();
+        }
+
+        [HttpGet]
+        [Route("{id}/messages")]
+        public async Task<IActionResult> GetMessages(int id)
+        {
+            // TODO: implement
+            return Json(new
+            {
+                Messages = new int[] { id, id, id }
+            });
+        }
+
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("UserName,Name,Picture")] Contact contact)
+        [Route("{id}/messages")]
+        public async Task<IActionResult> CreateMessage(int id)
         {
-            if (id != contact.UserName)
+            // TODO: implement
+            return Json(new
             {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(contact);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!ContactExists(contact.UserName))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            return View(contact);
+                Messages = new int[] { id, id, id }
+            });
         }
 
-        // GET: Contacts/Delete/5
-        public async Task<IActionResult> Delete(string id)
+        [HttpPut]
+        [Route("{id}/messages/{id2}")]
+        public async Task<IActionResult> UpdateMessage([Bind("id")] int id, [Bind("id2")] int id2, [FromBody] Message message)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var contact = await _context.Contact
-                .FirstOrDefaultAsync(m => m.UserName == id);
-            if (contact == null)
-            {
-                return NotFound();
-            }
-
-            return View(contact);
+            // TODO: implement
+            return Ok();
         }
 
-        // POST: Contacts/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(string id)
+        [HttpDelete]
+        [Route("{id}/messages/{id2}")]
+        public async Task<IActionResult> DeleteMessage([Bind("id")] int id, [Bind("id2")] int id2)
         {
-            var contact = await _context.Contact.FindAsync(id);
-            _context.Contact.Remove(contact);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            // TODO: implement
+            return Ok();
         }
 
-        private bool ContactExists(string id)
+        [HttpGet]
+        [Route("{id}/messages/{id2}")]
+        public async Task<IActionResult> GetMessage([Bind("id")] int id, [Bind("id2")] int id2)
         {
-            return _context.Contact.Any(e => e.UserName == id);
+            // TODO: implement
+            return Json(new
+            {
+                CoolMessages = new int[] { id, id2, id }
+            });
         }
     }
 }
