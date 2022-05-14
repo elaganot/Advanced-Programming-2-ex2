@@ -15,26 +15,6 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\rachip\source\repos\Advanced-Programming-2-ex2\E-Chat
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/rachip/source/repos/Advanced-Programming-2-ex2/E-Chat/Views/Contacts/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdHNcQ3JlYXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/rachip/source/repos/Advanced-Programming-2-ex2/E-Chat/Views/Contacts/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdHNcRGVsZXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/rachip/source/repos/Advanced-Programming-2-ex2/E-Chat/Views/Contacts/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdHNcRGV0YWlscy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/rachip/source/repos/Advanced-Programming-2-ex2/E-Chat/Views/Contacts/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdHNcRWRpdC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/rachip/source/repos/Advanced-Programming-2-ex2/E-Chat/Views/Contacts/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdHNcSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/rachip/source/repos/Advanced-Programming-2-ex2/E-Chat/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

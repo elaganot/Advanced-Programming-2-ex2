@@ -5,13 +5,15 @@ namespace E_Chat.Models
 {
     public class Message
     {
+        [Key]
+        [Required]
         public int Id { get; set; }
         [Required]
-        public string Text { get; set; }
+        public string Content { get; set; }
         [Required]
-        public string Time { get; set; }
+        public string Created { get; set; }
         [Required]
-        public string SenderName { get; set; }
+        public bool Sent { get; set; }
 
     }
 }

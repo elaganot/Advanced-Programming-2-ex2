@@ -63,7 +63,7 @@ namespace E_Chat.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Name,Feedback,Date,Time,Score")] Rating rating)
+        public async Task<IActionResult> Create([Bind("Name,Feedback,Date,Created,Score")] Rating rating)
         {
             if (ModelState.IsValid)
             {
@@ -98,7 +98,7 @@ namespace E_Chat.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("Name,Feedback,Date,Time,Score")] Rating rating)
+        public async Task<IActionResult> Edit(string id, [Bind("Name,Feedback,Date,Created,Score")] Rating rating)
         {
             if (id != rating.Name)
             {

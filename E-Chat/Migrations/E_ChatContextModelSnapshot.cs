@@ -32,7 +32,7 @@ namespace E_Chat.Migrations
                     b.Property<string>("Feedback")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Time")
+                    b.Property<string>("Created")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Name");
