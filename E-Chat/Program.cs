@@ -9,6 +9,14 @@ builder.Services.AddDbContext<E_ChatContext>(options =>
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddSession();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("Allow All",
+        builder =>
+        {
+            builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+        });
+});
 
 var app = builder.Build();
 
@@ -20,6 +28,7 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+app.UseCors("Allow All");
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 

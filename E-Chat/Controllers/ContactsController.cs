@@ -42,6 +42,16 @@ namespace E_Chat.Controllers
         }
 
         [HttpGet]
+        [Route("users")]
+        public async Task<IActionResult> Index()
+        {
+            // TODO: implement
+
+
+            return Json(Users.ToList());
+        }
+
+        [HttpGet]
         [Route("{UserName}")]
         public async Task<IActionResult> Index(string UserName)
         {
