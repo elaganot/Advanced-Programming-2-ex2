@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "07Cr5oRjVVAN7tN7AY0xYy5UldvwcI3GdUm64jZgFe0=",
+  "Hash": "O6SNDemEjV2dyHpYqoQk0Hk/CSpmNTi374EflVzYqXo=",
   "Source": "E-Chat",
   "BasePath": "_content/E-Chat",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Edenh\\Desktop\\ex2\\E-Chat\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\E-Chat.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\Edenh\\Desktop\\ex2\\E-Chat\\wwwroot\\css\\background.gif",
+      "SourceId": "E-Chat",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Edenh\\Desktop\\ex2\\E-Chat\\wwwroot\\",
+      "BasePath": "_content/E-Chat",
+      "RelativePath": "css/background.gif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\background.gif"
     },
     {
       "Identity": "C:\\Users\\Edenh\\Desktop\\ex2\\E-Chat\\wwwroot\\css\\site.css",
