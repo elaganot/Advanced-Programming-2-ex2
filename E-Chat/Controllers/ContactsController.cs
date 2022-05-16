@@ -47,7 +47,15 @@ namespace E_Chat.Controllers
         {
             // TODO: implement
 
+            return Json(Users.ToList());
+        }
 
+        [HttpPost]
+        [Route("users")]
+        public async Task<IActionResult> CreateUser([FromBody] User user)
+        {
+            // TODO: implement
+            Users.Add(user);
             return Json(Users.ToList());
         }
 
