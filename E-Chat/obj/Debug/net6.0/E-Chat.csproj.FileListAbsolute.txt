@@ -802,3 +802,4 @@ C:\Users\Edenh\Desktop\ex2\E-Chat\obj\Debug\net6.0\refint\E-Chat.dll
 C:\Users\Edenh\Desktop\ex2\E-Chat\obj\Debug\net6.0\E-Chat.pdb
 C:\Users\Edenh\Desktop\ex2\E-Chat\obj\Debug\net6.0\E-Chat.genruntimeconfig.cache
 C:\Users\Edenh\Desktop\ex2\E-Chat\obj\Debug\net6.0\ref\E-Chat.dll
+C:\Users\rachip\source\repos\Advanced-Programming-2-ex2\E-Chat\bin\Debug\net6.0\libman.json

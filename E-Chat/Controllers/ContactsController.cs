@@ -52,11 +52,11 @@ namespace E_Chat.Controllers
 
         [HttpPost]
         [Route("users")]
-        public async Task<IActionResult> CreateUser([FromBody] User user)
+        public async Task<IActionResult> CreateUser([FromBody] User newUser)
         {
             // TODO: implement
-            Users.Add(user);
-            return Json(Users.ToList());
+            Users.Add(newUser);
+            return StatusCode(201);
         }
 
         [HttpGet]
@@ -130,7 +130,7 @@ namespace E_Chat.Controllers
 
         [HttpPut]
         [Route("{UserName}/{id}")]
-        public async Task<IActionResult> UpdateContact(string id, string UserName, [FromBody] string Name, string Server)
+        public async Task<IActionResult> UpdateContact(string id, string UserName, [FromBody] Contact updatedContact)
         {
             // TODO: implement
 
@@ -148,8 +148,8 @@ namespace E_Chat.Controllers
                 return NotFound();
             }
 
-            user.MyContacts.Find(x => x.Id == id).Name = Name;
-            user.MyContacts.Find(x => x.Id == id).Server = Server;
+            user.MyContacts.Find(x => x.Id == id).Name = updatedContact.Name;
+            user.MyContacts.Find(x => x.Id == id).Server = updatedContact.Server;
             return NoContent();
         }
 
@@ -200,10 +200,10 @@ namespace E_Chat.Controllers
 
         [HttpPost]
         [Route("{UserName}/{id}/messages")]
-        public async Task<IActionResult> CreateMessage(string id, string UserName, [FromBody] string Content)
+        public async Task<IActionResult> CreateMessage( string UserName, string id, [FromBody] Content Content)
         {
             // TODO: implement
-
+            //string Content = "ela";
             var user = Users.Find(x => x.UserName == UserName);
 
             if (user == null)
@@ -227,9 +227,9 @@ namespace E_Chat.Controllers
             {
                 MessageId = user.MyContacts.Find(x => x.Id == id).Messages.Count() + 1;
             }
-            var message = new Message() { Id = MessageId, Content = Content, Created = DateTime.Now.ToString(), Sent = false };
+            var message = new Message() { Id = MessageId, Content = Content.Text, Created = DateTime.Now.ToString(), Sent = true };
             user.MyContacts.Find(x => x.Id == id).Messages.Add(message);
-            user.MyContacts.Find(x => x.Id == id).Last = Content;
+            user.MyContacts.Find(x => x.Id == id).Last = Content.Text;
             user.MyContacts.Find(x => x.Id == id).Lastdate = message.Created;
 
             return StatusCode(201);
