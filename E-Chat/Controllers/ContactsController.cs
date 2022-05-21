@@ -12,7 +12,7 @@ using System.Text;
 namespace E_Chat.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/")]
     public class ContactsController : Controller
     {
 
@@ -30,19 +30,94 @@ namespace E_Chat.Controllers
             messages.Add(new Message() { Id = 1, Content = "Ela, look what I made us", Created = "19:20", Sent = true });
             messages.Add(new Message() { Id = 2, Content = "WOW", Created = "19:21", Sent= false });
 
-            contacts.Add(new Contact() { Name = "ela", Id = "ela", Server = "localhost:7265", Last = "WOW", Lastdate = "19:21", Messages = messages });
+            //contacts.Add(new Contact() { Name = "ela", Id = "ela", Server = "localhost:7213", Last = "WOW", Lastdate = "19:21", Messages = messages });
 
             var messages1 = new List<Message>();
             messages1.Add(new Message() { Id = 1, Content = "Eden you are my hero", Created = "19:20", Sent = false });
             messages1.Add(new Message() { Id = 2, Content = "How did you get this phone number???", Created = "19:21", Sent = true });
 
-            contacts.Add(new Contact() { Name = "kim", Id = "kim", Server = "localhost:7265", Last = "How did you get this phone number???", Lastdate = "19:21", Messages = messages1 });
+            contacts.Add(new Contact() { Name = "kim", Id = "kim", Server = "localhost:7213", Last = "How did you get this phone number???", Lastdate = "19:21", Messages = messages1 });
 
             Users.Add(new User() { UserName = "eden", Name = "Eden Hamami", Password = "a123456", MyContacts = contacts });
+
+            var contacts2 = new List<Contact>();
+
+            var messages2 = new List<Message>();
+            messages2.Add(new Message() { Id = 1, Content = "Ela, look what I made us", Created = "19:20", Sent = true });
+            messages2.Add(new Message() { Id = 2, Content = "WOW", Created = "19:21", Sent = false });
+
+            contacts2.Add(new Contact() { Name = "Eden Hamami", Id = "eden", Server = "localhost:7213", Last = "WOW", Lastdate = "19:21", Messages = messages2 });
+
+            var messages12 = new List<Message>();
+            messages12.Add(new Message() { Id = 1, Content = "Eden you are my hero", Created = "19:20", Sent = false });
+            messages12.Add(new Message() { Id = 2, Content = "How did you get this phone number???", Created = "19:21", Sent = true });
+
+            contacts2.Add(new Contact() { Name = "kim", Id = "kim", Server = "localhost:7213", Last = "How did you get this phone number???", Lastdate = "19:21", Messages = messages12 });
+
+            Users.Add(new User() { UserName = "ela", Name = "ela", Password = "a123456", MyContacts = contacts2 });
+
+        }
+
+        [HttpPost]
+        [Route("transfer")]
+        public async Task<IActionResult> NewMessage([FromBody] TransferParam newMessage)
+        {
+            // TODO: implement
+
+            var user = Users.Find(x => x.UserName == newMessage.To);
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            var contact = user.MyContacts.Find(x => x.Id == newMessage.From);
+            if (contact == null)
+            {
+                return NotFound();
+            }
+
+            int MessageId = 0;
+            if (user.MyContacts.Find(x => x.Id == newMessage.From).Messages == null)
+            {
+                user.MyContacts.Find(x => x.Id == newMessage.From).Messages = new List<Message>();
+                MessageId = 1;
+            }
+            else
+            {
+                MessageId = user.MyContacts.Find(x => x.Id == newMessage.From).Messages.Count() + 1;
+            }
+            var message = new Message() { Id = MessageId, Content = newMessage.Content, Created = DateTime.Now.ToString(), Sent = false };
+            user.MyContacts.Find(x => x.Id == newMessage.From).Messages.Add(message);
+            user.MyContacts.Find(x => x.Id == newMessage.From).Last = newMessage.Content;
+            user.MyContacts.Find(x => x.Id == newMessage.From).Lastdate = message.Created;
+
+            return StatusCode(201);
+        }
+
+        [HttpPost]
+        [Route("invitations")]
+        public async Task<IActionResult> NewConversation([FromBody] InvitationsParam newConversation)
+        {
+            // TODO: implement
+
+            var user = Users.Find(x => x.UserName == newConversation.To);
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            var newContact = new Contact() { Id = newConversation.From, Name = newConversation.From, Server = newConversation.Server, Messages = new List<Message>()};
+
+
+            user.MyContacts.Add(newContact);
+
+            return StatusCode(201);
         }
 
         [HttpGet]
-        [Route("users")]
+        [Route("[controller]/users")]
         public async Task<IActionResult> Index()
         {
             // TODO: implement
@@ -51,7 +126,7 @@ namespace E_Chat.Controllers
         }
 
         [HttpPost]
-        [Route("users")]
+        [Route("[controller]/users")]
         public async Task<IActionResult> CreateUser([FromBody] User newUser)
         {
             // TODO: implement
@@ -60,7 +135,7 @@ namespace E_Chat.Controllers
         }
 
         [HttpGet]
-        [Route("{UserName}")]
+        [Route("[controller]/{UserName}")]
         public async Task<IActionResult> Index(string UserName)
         {
             // TODO: implement
@@ -76,7 +151,7 @@ namespace E_Chat.Controllers
         }
 
         [HttpPost]
-        [Route("{UserName}")]
+        [Route("[controller]/{UserName}")]
         public async Task<IActionResult> CreateContact(string UserName, [FromBody] Contact newContact)
         {
             // TODO: implement
@@ -97,7 +172,7 @@ namespace E_Chat.Controllers
         }
 
         [HttpGet]
-        [Route("{UserName}/{id}")]
+        [Route("[controller]/{UserName}/{id}")]
         public async Task<IActionResult> GetContactById(string id, string UserName)
         {
             // TODO: implement
@@ -129,7 +204,7 @@ namespace E_Chat.Controllers
         }
 
         [HttpPut]
-        [Route("{UserName}/{id}")]
+        [Route("[controller]/{UserName}/{id}")]
         public async Task<IActionResult> UpdateContact(string id, string UserName, [FromBody] Contact updatedContact)
         {
             // TODO: implement
@@ -154,7 +229,7 @@ namespace E_Chat.Controllers
         }
 
         [HttpDelete]
-        [Route("{UserName}/{id}")]
+        [Route("[controller]/{UserName}/{id}")]
         public async Task<IActionResult> DeleteContact(string id, string UserName)
         {
             // TODO: implement
@@ -177,7 +252,7 @@ namespace E_Chat.Controllers
         }
 
         [HttpGet]
-        [Route("{UserName}/{id}/messages")]
+        [Route("[controller]/{UserName}/{id}/messages")]
         public async Task<IActionResult> GetMessages(string id, string UserName)
         {
             // TODO: implement
@@ -199,7 +274,7 @@ namespace E_Chat.Controllers
         }
 
         [HttpPost]
-        [Route("{UserName}/{id}/messages")]
+        [Route("[controller]/{UserName}/{id}/messages")]
         public async Task<IActionResult> CreateMessage( string UserName, string id, [FromBody] Content Content)
         {
             // TODO: implement
@@ -237,7 +312,7 @@ namespace E_Chat.Controllers
         }
 
         [HttpPut]
-        [Route("{UserName}/{id}/messages/{id2}")]
+        [Route("[controller]/{UserName}/{id}/messages/{id2}")]
         public async Task<IActionResult> UpdateMessage([Bind("id")] string id, [Bind("id2")] int id2, [Bind("UserName")] string UserName, [FromBody] string Content)
         {
             // TODO: implement
@@ -272,7 +347,7 @@ namespace E_Chat.Controllers
         }
 
         [HttpDelete]
-        [Route("{UserName}/{id}/messages/{id2}")]
+        [Route("[controller]/{UserName}/{id}/messages/{id2}")]
         public async Task<IActionResult> DeleteMessage([Bind("id")] string id, [Bind("id2")] int id2, [Bind("UserName")] string UserName)
         {
             // TODO: implement
@@ -306,7 +381,7 @@ namespace E_Chat.Controllers
         }
 
         [HttpGet]
-        [Route("{UserName}/{id}/messages/{id2}")]
+        [Route("[controller]/{UserName}/{id}/messages/{id2}")]
         public async Task<IActionResult> GetMessage([Bind("id")] string id, [Bind("id2")] int id2, [Bind("UserName")] string UserName)
         {
             // TODO: implement
