@@ -65,5 +65,4 @@ app.UseEndpoints(endpoints =>
     endpoints.MapHub<ChatHub>("/hubs/chat");
 });
 
-
 app.Run();

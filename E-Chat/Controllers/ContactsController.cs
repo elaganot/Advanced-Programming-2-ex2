@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using E_Chat.Data;
 using E_Chat.Models;
 using System.Text;
+using E_Chat.Hubs;
 
 namespace E_Chat.Controllers
 {
@@ -30,7 +31,7 @@ namespace E_Chat.Controllers
             messages.Add(new Message() { Id = 1, Content = "Ela, look what I made us", Created = "19:20", Sent = true });
             messages.Add(new Message() { Id = 2, Content = "WOW", Created = "19:21", Sent= false });
 
-            //contacts.Add(new Contact() { Name = "ela", Id = "ela", Server = "localhost:7213", Last = "WOW", Lastdate = "19:21", Messages = messages });
+            contacts.Add(new Contact() { Name = "ela", Id = "ela", Server = "localhost:7213", Last = "WOW", Lastdate = "19:21", Messages = messages });
 
             var messages1 = new List<Message>();
             messages1.Add(new Message() { Id = 1, Content = "Eden you are my hero", Created = "19:20", Sent = false });

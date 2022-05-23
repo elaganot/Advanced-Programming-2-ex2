@@ -4,10 +4,12 @@ using Microsoft.AspNetCore.SignalR;
 
 namespace E_Chat.Hubs
 {
+
     public class ChatHub : Hub
     {
-        public async Task SendMessage(string message)
+        public async Task SendMessage(TransferParam message)
         {
+
             await Clients.All.SendAsync("ReceiveMessage", message);
         }
     }
