@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "O6SNDemEjV2dyHpYqoQk0Hk/CSpmNTi374EflVzYqXo=",
+  "Hash": "THGiaSOhcFTsVpGdpU01UyM/K1tbUFzc7ROo8VcnFeo=",
   "Source": "E-Chat",
   "BasePath": "_content/E-Chat",
   "Mode": "Default",
@@ -1086,6 +1086,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\Edenh\\Desktop\\ex2\\E-Chat\\wwwroot\\lib\\microsoft\\signalr\\dist\\browser\\signalr.js",
+      "SourceId": "E-Chat",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Edenh\\Desktop\\ex2\\E-Chat\\wwwroot\\",
+      "BasePath": "_content/E-Chat",
+      "RelativePath": "lib/microsoft/signalr/dist/browser/signalr.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\microsoft\\signalr\\dist\\browser\\signalr.js"
+    },
+    {
+      "Identity": "C:\\Users\\Edenh\\Desktop\\ex2\\E-Chat\\wwwroot\\lib\\microsoft\\signalr\\dist\\browser\\signalr.min.js",
+      "SourceId": "E-Chat",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Edenh\\Desktop\\ex2\\E-Chat\\wwwroot\\",
+      "BasePath": "_content/E-Chat",
+      "RelativePath": "lib/microsoft/signalr/dist/browser/signalr.min.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\microsoft\\signalr\\dist\\browser\\signalr.min.js"
     }
   ]
 }

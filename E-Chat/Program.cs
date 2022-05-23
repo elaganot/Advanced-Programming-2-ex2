@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using E_Chat.Data;
+using E_Chat.Hubs;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<E_ChatContext>(options =>
@@ -9,14 +11,28 @@ builder.Services.AddDbContext<E_ChatContext>(options =>
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddSession();
+//builder.Services.AddCors(options =>
+//{
+//    options.AddPolicy("Allow All",
+//        builder =>
+//        {
+//            builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+//        });
+//});
+
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("Allow All",
-        builder =>
-        {
-            builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
-        });
+    options.AddPolicy("ClientPermission", policy =>
+    {
+        policy.AllowAnyHeader()
+            .AllowAnyMethod()
+            .WithOrigins("http://localhost:3000")
+            .AllowCredentials();
+    });
 });
+
+builder.Services.AddSignalR();
+
 
 var app = builder.Build();
 
@@ -28,7 +44,9 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-app.UseCors("Allow All");
+app.UseCors("ClientPermission");
+
+//app.UseCors("Allow All");
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
@@ -41,5 +59,11 @@ app.UseSession();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Ratings}/{action=Index}/{id?}");
+
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapHub<ChatHub>("/hubs/chat");
+});
+
 
 app.Run();
