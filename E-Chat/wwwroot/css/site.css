@@ -14,8 +14,43 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
-  background-image:url(./background.gif);
-  background-size:cover;
- 
+    margin-bottom: 60px;
+    background-image: url(rBackground.gif);
+    background-size: cover;
+    text-align: center;
+    font-family: "Calibri";
+}
+
+.backToLogin-btn {
+    font-size: 20px;
+    background-position: center;
+    background-size: cover;
+    text-transform: uppercase;
+    align-items: center;
+    align-self: flex-end!important;
+    border: none;
+    font-family: "Cooper Black";
+}
+.customer-reviews {
+    font-family: "Cooper Black";
+    align-content: center;
+    font-size: xx-large;
+}
+.rating-page{
+    align-items:center !important;
+    text-align:center !important;
+    
+}
+.average-rate {
+    text-align: center;
+    font-family: "Gabriola";
+    font-weight: bold;
+    font-size: xx-large;
+
+}
+.table {
+    background-color: rgb(255, 255, 255, 0.8);
+    border-radius: 25px;
+    text-align: center;
+    font-family: Calibri;
 }

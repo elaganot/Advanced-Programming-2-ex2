@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "THGiaSOhcFTsVpGdpU01UyM/K1tbUFzc7ROo8VcnFeo=",
+  "Hash": "Oc7gmv4sgDSxLVJd+jv0I6pM87EZ9xpnupSVzxPWhYs=",
   "Source": "E-Chat",
   "BasePath": "_content/E-Chat",
   "Mode": "Default",
@@ -51,12 +51,12 @@
       "OriginalItemSpec": "C:\\Users\\Edenh\\Desktop\\ex2\\E-Chat\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\E-Chat.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\Edenh\\Desktop\\ex2\\E-Chat\\wwwroot\\css\\background.gif",
+      "Identity": "C:\\Users\\Edenh\\Desktop\\ex2\\E-Chat\\wwwroot\\css\\backToLogin.gif",
       "SourceId": "E-Chat",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Edenh\\Desktop\\ex2\\E-Chat\\wwwroot\\",
       "BasePath": "_content/E-Chat",
-      "RelativePath": "css/background.gif",
+      "RelativePath": "css/backToLogin.gif",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -65,7 +65,24 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\background.gif"
+      "OriginalItemSpec": "wwwroot\\css\\backToLogin.gif"
+    },
+    {
+      "Identity": "C:\\Users\\Edenh\\Desktop\\ex2\\E-Chat\\wwwroot\\css\\rBackground.gif",
+      "SourceId": "E-Chat",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Edenh\\Desktop\\ex2\\E-Chat\\wwwroot\\",
+      "BasePath": "_content/E-Chat",
+      "RelativePath": "css/rBackground.gif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\rBackground.gif"
     },
     {
       "Identity": "C:\\Users\\Edenh\\Desktop\\ex2\\E-Chat\\wwwroot\\css\\site.css",
