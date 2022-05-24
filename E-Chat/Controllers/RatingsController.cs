@@ -12,18 +12,18 @@ namespace E_Chat.Controllers
 {
     public class RatingsController : Controller
     {
-        private readonly E_ChatContext _context;
+        private readonly RatingsService _service;
 
-        public RatingsController(E_ChatContext context)
+        public RatingsController(RatingsService service)
         {
-            _context = context;
+            _service = service;
         }
 
         // GET: Ratings
         public async Task<IActionResult> Index(string searchString)
         {
 
-            var ratings = from rating in _context.Rating
+            var ratings = from rating in _service.GetAllRatings()
                           select rating;
 
             if (!String.IsNullOrEmpty(searchString))
@@ -31,7 +31,7 @@ namespace E_Chat.Controllers
                 ratings = ratings.Where(s => s.Name!.Contains(searchString));
             }
 
-            return View(await ratings.ToListAsync());
+            return View(ratings.ToList());
         }
 
         // GET: Ratings/Details/5
@@ -42,8 +42,7 @@ namespace E_Chat.Controllers
                 return NotFound();
             }
 
-            var rating = await _context.Rating
-                .FirstOrDefaultAsync(m => m.Name == id);
+            var rating = _service.Details(id);
             if (rating == null)
             {
                 return NotFound();
@@ -69,9 +68,7 @@ namespace E_Chat.Controllers
             {
                 rating.Time = DateTime.Now.ToString("HH:mm");
                 rating.Date = DateTime.Now.ToString("dd/MM/yyyy");
-                _context.Add(rating);
-
-                await _context.SaveChangesAsync();
+                _service.SaveNewRating(rating);
                 return RedirectToAction(nameof(Index));
             }
             return View(rating);
@@ -85,11 +82,11 @@ namespace E_Chat.Controllers
                 return NotFound();
             }
 
-            var rating = await _context.Rating.FindAsync(id);
-            if (rating == null)
-            {
-                return NotFound();
-            }
+            var rating = _service.Edit(id);
+            //if (rating == null)
+            //{
+            //    return NotFound();
+            //}
             return View(rating);
         }
 
@@ -111,8 +108,7 @@ namespace E_Chat.Controllers
             {
                 try
                 {
-                    _context.Update(rating);
-                    await _context.SaveChangesAsync();
+                    _service.Update(rating);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -138,8 +134,7 @@ namespace E_Chat.Controllers
                 return NotFound();
             }
 
-            var rating = await _context.Rating
-                .FirstOrDefaultAsync(m => m.Name == id);
+            var rating = _service.Details(id);
             if (rating == null)
             {
                 return NotFound();
@@ -153,15 +148,13 @@ namespace E_Chat.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)
         {
-            var rating = await _context.Rating.FindAsync(id);
-            _context.Rating.Remove(rating);
-            await _context.SaveChangesAsync();
+            _service.Delete(id);
             return RedirectToAction(nameof(Index));
         }
 
         private bool RatingExists(string id)
         {
-            return _context.Rating.Any(e => e.Name == id);
+            return _service.GetAllRatings().Any(e => e.Name == id);
         }
     }
 }
