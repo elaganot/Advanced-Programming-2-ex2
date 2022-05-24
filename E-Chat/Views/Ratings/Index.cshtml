@@ -16,34 +16,23 @@
 		avg = sum / count;
 
 		<div class="rating-page">
-		<span class="rating-page-title">
+		<span class="customer-reviews">
 			CUSTOMER REVIEWS
 		</span>
-		<table class="avg">
-			<thead>
-				<tr>
-					<th>
-						AVERAGE RATE: @avg
-					</th>
-				</tr>
-			</thead>
-		</table>
+		<div class="average-rate">
+						AVERAGE RATE:@avg
+					</div>
 		</div>
 	}
 	else
 	{
 		<div class="rating-page">
 
-		<h1>CUSTOMER REVIEWS </h1>
-		<table>
-			<thead>
-				<tr>
-					<th>
-						AVERAGE RATE: 0
-					</th>
-				</tr>
-			</thead>
-		</table>
+		<h1 class="customer-reviews">CUSTOMER REVIEWS </h1>
+					<div class="average-rate">
+						AVERAGE RATE: avg
+					</div>
+			
 		</div>
 	}
 }
@@ -106,4 +95,5 @@
 		}
 	</tbody>
 </table>
+
 </div>

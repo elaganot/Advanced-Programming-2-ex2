@@ -94,8 +94,19 @@ namespace E_Chat.Controllers
             {
                 return NotFound();
             }
+            List<selectedFields> selectedFields=new List<selectedFields>();
+            foreach (Contact contact in user.MyContacts)
+            {
+                selectedFields newContact = new selectedFields();
+                newContact.Id = contact.Id;
+                newContact.Name=contact.Name;
+                newContact.Server=contact.Server;
+                newContact.Last=contact.Last;
+                newContact.Lastdate=contact.Lastdate;
+                selectedFields.Add(newContact);
+            }
 
-            return Json(user.MyContacts.ToList());
+             return Json(selectedFields.ToList());
         }
 
         [HttpPost]
