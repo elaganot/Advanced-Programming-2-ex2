@@ -97,17 +97,19 @@ namespace E_Chat.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(string id, [Bind("Name,Feedback,Date,Created,Score")] Rating rating)
         {
+
             if (id != rating.Name)
             {
                 return NotFound();
-                rating.Time = DateTime.Now.ToString("HH:mm");
-                rating.Date = DateTime.Now.ToString("dd / MM / yyyy");
+
             }
 
             if (ModelState.IsValid)
             {
                 try
                 {
+                    rating.Time = DateTime.Now.ToString("HH:mm");
+                    rating.Date = DateTime.Now.ToString("dd / MM / yyyy");
                     _service.Update(rating);
                 }
                 catch (DbUpdateConcurrencyException)
