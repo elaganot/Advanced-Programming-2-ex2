@@ -85,8 +85,12 @@ namespace E_Chat.Models
 
             var newContact = new Contact() { Id = newConversation.From, Name = newConversation.From, Server = newConversation.Server, Messages = new List<Message>() };
 
+            var contact = user.MyContacts.Find(x => x.Id == newConversation.From);
 
-            user.MyContacts.Add(newContact);
+            if (contact == null)
+            {
+                user.MyContacts.Add(newContact);
+            }
 
             return 0;
         }
@@ -105,7 +109,13 @@ namespace E_Chat.Models
                 return -1;
             }
 
-            user.MyContacts.Add(newContact);
+            var contact = user.MyContacts.Find(x => x.Id == newContact.Id);
+
+            if (contact == null)
+            {
+                user.MyContacts.Add(newContact);
+            }
+
             return 0;
         }
 
