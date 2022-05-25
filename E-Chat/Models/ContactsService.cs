@@ -19,10 +19,10 @@ namespace E_Chat.Models
         public int CreateNewConversation(InvitationsParam newConversation);
         void SaveNewUser(User user);
         public int CreateNewContact(string UserName, Contact newContact);
-        public int UpdateContact(string id, string UserName, Contact updatedContact);
+        public int UpdateContact(string id, string UserName, UpdateContactParams updatedContact);
         public int DeleteContact(string id, string UserName);
-        public int CreateMessage(string UserName, string id, Content Content);
-        public int UpdateMessage(string id, int id2, string UserName, string Content);
+        public int CreateMessage(string UserName, string id, ContentParam Content);
+        public int UpdateMessage(string id, int id2, string UserName, ContentParam Content);
         public int DeleteMessage(string id, int id2, string UserName);
 
 
@@ -119,7 +119,7 @@ namespace E_Chat.Models
             return 0;
         }
 
-        public int UpdateContact(string id, string UserName, Contact updatedContact)
+        public int UpdateContact(string id, string UserName, UpdateContactParams updatedContact)
         {
             var user = Users.Find(x => x.UserName == UserName);
 
@@ -158,7 +158,7 @@ namespace E_Chat.Models
             return 0;
         }
 
-        public int CreateMessage(string UserName, string id, Content Content)
+        public int CreateMessage(string UserName, string id, ContentParam Content)
         {
             var user = Users.Find(x => x.UserName == UserName);
 
@@ -183,15 +183,15 @@ namespace E_Chat.Models
             {
                 MessageId = user.MyContacts.Find(x => x.Id == id).Messages.Count() + 1;
             }
-            var message = new Message() { Id = MessageId, Content = Content.Text, Created = DateTime.Now.ToString(), Sent = true };
+            var message = new Message() { Id = MessageId, Content = Content.Content, Created = DateTime.Now.ToString(), Sent = true };
             user.MyContacts.Find(x => x.Id == id).Messages.Add(message);
-            user.MyContacts.Find(x => x.Id == id).Last = Content.Text;
+            user.MyContacts.Find(x => x.Id == id).Last = Content.Content;
             user.MyContacts.Find(x => x.Id == id).Lastdate = message.Created;
 
             return 0;
         }
 
-        public int UpdateMessage(string id, int id2, string UserName, string Content)
+        public int UpdateMessage(string id, int id2, string UserName, ContentParam Content)
         {
             var user = Users.Find(x => x.UserName == UserName);
 
@@ -216,8 +216,8 @@ namespace E_Chat.Models
                 return -1;
             }
 
-            user.MyContacts.Find(x => x.Id == id).Messages.Find(x => x.Id == id2).Content = Content;
-            user.MyContacts.Find(x => x.Id == id).Last = Content;
+            user.MyContacts.Find(x => x.Id == id).Messages.Find(x => x.Id == id2).Content = Content.Content;
+            user.MyContacts.Find(x => x.Id == id).Last = Content.Content;
 
             return 0;
         }

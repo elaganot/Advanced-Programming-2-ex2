@@ -167,7 +167,7 @@ namespace E_Chat.Controllers
 
         [HttpPut]
         [Route("[controller]/{UserName}/{id}")]
-        public async Task<IActionResult> UpdateContact(string id, string UserName, [FromBody] Contact updatedContact)
+        public async Task<IActionResult> UpdateContact(string UserName, string id, [FromBody] UpdateContactParams updatedContact)
         {
             // TODO: implement
 
@@ -226,7 +226,7 @@ namespace E_Chat.Controllers
 
         [HttpPost]
         [Route("[controller]/{UserName}/{id}/messages")]
-        public async Task<IActionResult> CreateMessage(string UserName, string id, [FromBody] Content Content)
+        public async Task<IActionResult> CreateMessage(string UserName, string id, [FromBody] ContentParam Content)
         {
             // TODO: implement
             int RetVal = _service.CreateMessage(UserName, id, Content);
@@ -244,7 +244,7 @@ namespace E_Chat.Controllers
 
         [HttpPut]
         [Route("[controller]/{UserName}/{id}/messages/{id2}")]
-        public async Task<IActionResult> UpdateMessage([Bind("id")] string id, [Bind("id2")] int id2, [Bind("UserName")] string UserName, [FromBody] string Content)
+        public async Task<IActionResult> UpdateMessage([Bind("id")] string id, [Bind("id2")] int id2, [Bind("UserName")] string UserName, [FromBody] ContentParam Content)
         {
             // TODO: implement
 
