@@ -2,8 +2,13 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using E_Chat.Data;
 using E_Chat.Hubs;
+using E_Chat.Models;
+
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddSingleton<ContactsService>();
+builder.Services.AddScoped<RatingsService>();
+
 
 builder.Services.AddDbContext<E_ChatContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("E_ChatContext") ?? throw new InvalidOperationException("Connection string 'E_ChatContext' not found.")));
@@ -64,5 +69,6 @@ app.UseEndpoints(endpoints =>
 {
     endpoints.MapHub<ChatHub>("/hubs/chat");
 });
+
 
 app.Run();

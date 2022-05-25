@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
-namespace E_Chat.Controllers
+namespace E_Chat.Models
 {
     internal class selectedFields
     {
