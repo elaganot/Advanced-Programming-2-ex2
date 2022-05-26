@@ -4,9 +4,9 @@ namespace E_Chat.Models
 {
     public class Rating
     {
-        private int score;
-
         [Key]
+        public int RatingId { get; set; }
+        private int score;
         [Required(ErrorMessage = "Enter your name")]
         public string Name { get; set; }
         public string Feedback { get; set; }
