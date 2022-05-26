@@ -62,13 +62,14 @@ namespace E_Chat.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Name,Feedback,Date,Created,Score")] Rating rating)
+        public async Task<IActionResult> Create([Bind("RatingId,Name,Feedback,Date,Created,Score")] Rating rating)
         {
             if (ModelState.IsValid)
             {
                 rating.Time = DateTime.Now.ToString("HH:mm");
                 rating.Date = DateTime.Now.ToString("dd/MM/yyyy");
-                _service.SaveNewRating(rating);
+               
+                _service.SaveNewRating(rating.Name,rating.Score,rating.Feedback);
                 return RedirectToAction(nameof(Index));
             }
             return View(rating);
