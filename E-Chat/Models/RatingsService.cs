@@ -16,7 +16,7 @@ namespace E_Chat.Models
     {
 
         public IEnumerable<Rating> GetAllRatings();
-        public void SaveNewRating(Rating rating);
+        public void SaveNewRating(string name, int score, string feedback);
         public Rating Details(string id);
         public Rating Edit(string id);
         public void Update(Rating rating);
@@ -36,12 +36,20 @@ namespace E_Chat.Models
         {
             return _context.Rating.ToList();
         }
-        public void SaveNewRating(Rating rating)
+        public void SaveNewRating(string name, int score, string feedback)
         {
-            _context.Rating.Add(rating);
-            _context.SaveChanges();
-        }
-
+            int nextId;
+            if (_context.Rating.Count<Rating>() == 0)
+            {
+                nextId = 1;
+            }
+            else {
+                nextId = _context.Rating.Max<Rating>(r => r.RatingId) + 1;
+            }
+                _context.Rating.Add(new Rating() {RatingId=nextId,Score=score,Feedback=feedback,Name=name});
+                _context.SaveChanges();
+            }
+        
         public Rating Details(string id)
         {
             var rating = _context.Rating
