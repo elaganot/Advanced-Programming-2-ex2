@@ -10,6 +10,8 @@ using E_Chat.Models;
 using System.Text;
 using E_Chat.Hubs;
 using E_Chat;
+using Microsoft.AspNetCore.SignalR;
+
 
 
 namespace E_Chat.Controllers
@@ -20,12 +22,12 @@ namespace E_Chat.Controllers
     {
 
         private readonly ContactsService _service;
-        //ChatHub hub;
+        private readonly IHubContext<ChatHub> hub;
 
-        public ContactsController(ContactsService service)
+        public ContactsController(ContactsService service, IHubContext<ChatHub> hub)
         {
             _service = service;
-            //this.hub = hub;
+            this.hub = hub;
 
         }
 
@@ -42,7 +44,7 @@ namespace E_Chat.Controllers
                 return NotFound();
             }
 
-            //await hub.SendMessage(newMessage);
+            await hub.Clients.All.SendAsync("ReceiveMessage", newMessage);
 
             return StatusCode(201);
         }
