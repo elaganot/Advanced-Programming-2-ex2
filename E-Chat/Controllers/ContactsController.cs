@@ -20,12 +20,12 @@ namespace E_Chat.Controllers
     {
 
         private readonly ContactsService _service;
-        ChatHub hub;
+        //ChatHub hub;
 
-        public ContactsController(ContactsService service, ChatHub hub)
+        public ContactsController(ContactsService service)
         {
             _service = service;
-            this.hub = hub;
+            //this.hub = hub;
 
         }
 
@@ -42,7 +42,7 @@ namespace E_Chat.Controllers
                 return NotFound();
             }
 
-            await hub.SendMessage(newMessage);
+            //await hub.SendMessage(newMessage);
 
             return StatusCode(201);
         }
@@ -222,6 +222,11 @@ namespace E_Chat.Controllers
             if (contact == null)
             {
                 return NotFound();
+            }
+
+            if(contact.Messages == null)
+            {
+                contact.Messages = new List<Message>();
             }
 
             return Json(contact.Messages.ToList());

@@ -7,6 +7,7 @@ namespace E_Chat.Models
         private int score;
 
         [Key]
+
         [Required(ErrorMessage = "Enter your name")]
         public string Name { get; set; }
         public string Feedback { get; set; }
