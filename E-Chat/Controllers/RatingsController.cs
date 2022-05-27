@@ -35,7 +35,7 @@ namespace E_Chat.Controllers
         }
 
         // GET: Ratings/Details/5
-        public async Task<IActionResult> Details(string id)
+        public async Task<IActionResult> Details(int id)
         {
             if (id == null)
             {
@@ -76,7 +76,7 @@ namespace E_Chat.Controllers
         }
 
         // GET: Ratings/Edit/5
-        public async Task<IActionResult> Edit(string id)
+        public async Task<IActionResult> Edit(int id)
         {
             if (id == null)
             {
@@ -96,19 +96,20 @@ namespace E_Chat.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("Name,Feedback,Date,Created,Score")] Rating rating)
+        public async Task<IActionResult> Edit(int id, [Bind("RatingId,Name,Feedback,Date,Created,Score")] Rating rating)
         {
 
-            if (id != rating.Name)
-            {
-                return NotFound();
+            //if (id != rating.RatingId)
+            //{
+            //    return NotFound();
 
-            }
+            //}
 
             if (ModelState.IsValid)
             {
                 try
                 {
+                    rating.RatingId = id;
                     rating.Time = DateTime.Now.ToString("HH:mm");
                     rating.Date = DateTime.Now.ToString("dd / MM / yyyy");
                     _service.Update(rating);
@@ -130,7 +131,7 @@ namespace E_Chat.Controllers
         }
 
         // GET: Ratings/Delete/5
-        public async Task<IActionResult> Delete(string id)
+        public async Task<IActionResult> Delete(int id)
         {
             if (id == null)
             {
@@ -149,7 +150,7 @@ namespace E_Chat.Controllers
         // POST: Ratings/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(string id)
+        public async Task<IActionResult> DeleteConfirmed(int id)
         {
             _service.Delete(id);
             return RedirectToAction(nameof(Index));

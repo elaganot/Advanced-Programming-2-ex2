@@ -17,10 +17,10 @@ namespace E_Chat.Models
 
         public IEnumerable<Rating> GetAllRatings();
         public void SaveNewRating(string name, int score, string feedback);
-        public Rating Details(string id);
-        public Rating Edit(string id);
+        public Rating Details(int id);
+        public Rating Edit(int id);
         public void Update(Rating rating);
-        public void Delete(string id);
+        public void Delete(int id);
 
     }
     public class RatingsService : IRatingsService
@@ -46,14 +46,14 @@ namespace E_Chat.Models
             else {
                 nextId = _context.Rating.Max<Rating>(r => r.RatingId) + 1;
             }
-                _context.Rating.Add(new Rating() {RatingId=nextId,Score=score,Feedback=feedback,Name=name});
+                _context.Rating.Add(new Rating() {RatingId=nextId,Score=score,Feedback=feedback,Name=name, Time = DateTime.Now.ToString("HH:mm"), Date = DateTime.Now.ToString("dd/MM/yyyy") });
                 _context.SaveChanges();
             }
         
-        public Rating Details(string id)
+        public Rating Details(int id)
         {
             var rating = _context.Rating
-                    .FirstOrDefault(m => m.Name == id);
+                    .FirstOrDefault(m => m.RatingId == id);
             if (rating == null)
             {
                 return null;
@@ -62,7 +62,7 @@ namespace E_Chat.Models
             return rating;
         }
 
-        public Rating Edit(string id)
+        public Rating Edit(int id)
         {
             var rating = _context.Rating.Find(id);
             if (rating == null)
@@ -78,7 +78,7 @@ namespace E_Chat.Models
             _context.SaveChanges();
         }
 
-        public void Delete(string id)
+        public void Delete(int id)
         {
             var rating = _context.Rating.FindAsync(id);
             _context.Rating.Remove(rating.Result);
