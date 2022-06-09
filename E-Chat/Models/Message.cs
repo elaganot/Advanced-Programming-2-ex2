@@ -9,11 +9,13 @@ namespace E_Chat.Models
         [Required]
         public int Id { get; set; }
         [Required]
+        public string From { get; set; }
+        [Required]
+        public string To { get; set; }
+        [Required]
         public string Content { get; set; }
         [Required]
         public string Created { get; set; }
-        [Required]
-        public bool Sent { get; set; }
 
     }
 }

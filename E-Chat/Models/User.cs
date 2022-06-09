@@ -17,11 +17,6 @@ namespace E_Chat.Models
         //[RegularExpression("^[a - zA - Z0 - 9] *$")]
         public string Password { get; set; }
         public string Picture { get; set; }
-        public List<Contact> MyContacts
-        {
-            get;
-            set;
-        }
 
     }
 }

@@ -8,15 +8,13 @@ namespace E_Chat.Models
         [Required]
         public string Id { get; set; }
         [Required]
-        public string Name { get; set; }
+        public int UserId { get; set; }
+        [Required]
+        public string ContactUserName { get; set; }
+        [Required]
+        public string ContactName { get; set; }
         [Required]
         public string Server { get; set; }
 
-        public string Last { get; set; }
-        public string Lastdate { get; set; }
-
-        //public string Picture { get; set; }
-
-        public List<Message> Messages { get; set; }
     }
 }

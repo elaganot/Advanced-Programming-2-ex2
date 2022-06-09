@@ -47,26 +47,23 @@ namespace E_Chat.Models
                 return -1;
             }
 
-            var contact = user.MyContacts.Find(x => x.Id == newMessage.From);
+            var contact = _context.Contact
+                .Where(x => x.UserId == user.Id && x.ContactName == newMessage.From)
+                .FirstOrDefault();
             if (contact == null)
             {
                 return -1;
             }
 
-            int MessageId = 0;
-            if (user.MyContacts.Find(x => x.Id == newMessage.From).Messages == null)
-            {
-                user.MyContacts.Find(x => x.Id == newMessage.From).Messages = new List<Message>();
-                MessageId = 1;
-            }
-            else
-            {
-                MessageId = user.MyContacts.Find(x => x.Id == newMessage.From).Messages.Count() + 1;
-            }
-            var message = new Message() { Id = MessageId, Content = newMessage.Content, Created = DateTime.Now.ToString(), Sent = false };
-            user.MyContacts.Find(x => x.Id == newMessage.From).Messages.Add(message);
-            user.MyContacts.Find(x => x.Id == newMessage.From).Last = newMessage.Content;
-            user.MyContacts.Find(x => x.Id == newMessage.From).Lastdate = message.Created;
+            
+            var message = new Message() { 
+                From = newMessage.From,
+                To = newMessage.To,
+                Content = newMessage.Content, 
+                Created = DateTime.Now.ToString()
+            };
+            _context.Message.Add(message);
+            _context.SaveChanges();
 
             return 0;
         }
@@ -79,13 +76,20 @@ namespace E_Chat.Models
                 return -1;
             }
 
-            var newContact = new Contact() { Id = newConversation.From, Name = newConversation.From, Server = newConversation.Server, Messages = new List<Message>() };
+            var newContact = new Contact() { 
+                UserId = user.Id, 
+                ContactUserName = newConversation.From, 
+                ContactName = newConversation.From, 
+                Server = newConversation.Server
+            };
 
-            var contact = user.MyContacts.Find(x => x.Id == newConversation.From);
-
+            var contact = _context.Contact
+                .Where(x => x.UserId == user.Id && x.ContactUserName == newContact.ContactUserName)
+                .FirstOrDefault();
             if (contact == null)
             {
-                user.MyContacts.Add(newContact);
+                _context.Contact.Add(newContact);
+                _context.SaveChanges();
             }
 
             return 0;
@@ -95,6 +99,7 @@ namespace E_Chat.Models
         public void SaveNewUser(User user)
         {
             _context.User.Add(user);
+            _context.SaveChanges();
         }
 
         public int CreateNewContact(string UserName, Contact newContact)
