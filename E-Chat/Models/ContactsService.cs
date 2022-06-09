@@ -32,19 +32,16 @@ namespace E_Chat.Models
     public class ContactsService : IContactsService
     {
 
-        //private static List<User> Users { get; set; }
-
-        private static List<User> Users = new List<User>();
+        private readonly E_ChatContext _context;
 
         public List<User> GetAllUsers()
         {
-            return Users;
+            return _context.User.ToList();
         }
 
         public int SaveNewMessage(TransferParam newMessage)
         {
-            var user = Users.Find(x => x.UserName == newMessage.To);
-
+            var user = _context.User.Where(x => x.UserName == newMessage.To).FirstOrDefault();
             if (user == null)
             {
                 return -1;
@@ -76,8 +73,7 @@ namespace E_Chat.Models
 
         public int CreateNewConversation(InvitationsParam newConversation)
         {
-            var user = Users.Find(x => x.UserName == newConversation.To);
-
+            var user = _context.User.Where(x => x.UserName == newConversation.To).FirstOrDefault();
             if (user == null)
             {
                 return -1;
@@ -98,12 +94,12 @@ namespace E_Chat.Models
 
         public void SaveNewUser(User user)
         {
-            Users.Add(user);
+            _context.User.Add(user);
         }
 
         public int CreateNewContact(string UserName, Contact newContact)
         {
-            var user = Users.Find(x => x.UserName == UserName);
+            var user = _context.User.Where(x => x.UserName == UserName).FirstOrDefault();
             if (user == null)
             {
                 return -1;
@@ -121,7 +117,7 @@ namespace E_Chat.Models
 
         public int UpdateContact(string id, string UserName, UpdateContactParams updatedContact)
         {
-            var user = Users.Find(x => x.UserName == UserName);
+            var user = _context.User.Where(x => x.UserName == UserName).FirstOrDefault();
 
             if (user == null)
             {
@@ -141,7 +137,7 @@ namespace E_Chat.Models
 
         public int DeleteContact(string id, string UserName)
         {
-            var user = Users.Find(x => x.UserName == UserName);
+            var user = _context.User.Where(x => x.UserName == UserName).FirstOrDefault();
 
             if (user == null)
             {
@@ -160,7 +156,7 @@ namespace E_Chat.Models
 
         public int CreateMessage(string UserName, string id, ContentParam Content)
         {
-            var user = Users.Find(x => x.UserName == UserName);
+            var user = _context.User.Where(x => x.UserName == UserName).FirstOrDefault();
 
             if (user == null)
             {
@@ -193,7 +189,7 @@ namespace E_Chat.Models
 
         public int UpdateMessage(string id, int id2, string UserName, ContentParam Content)
         {
-            var user = Users.Find(x => x.UserName == UserName);
+            var user = _context.User.Where(x => x.UserName == UserName).FirstOrDefault();
 
             if (user == null)
             {
@@ -224,7 +220,7 @@ namespace E_Chat.Models
 
         public int DeleteMessage(string id, int id2, string UserName)
         {
-            var user = Users.Find(x => x.UserName == UserName);
+            var user = _context.User.Where(x => x.UserName == UserName).FirstOrDefault();
 
             if (user == null)
             {

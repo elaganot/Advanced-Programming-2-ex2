@@ -7,6 +7,7 @@ namespace E_Chat.Models
     public class User
     {
         [Key]
+        public int Id { get; set; }
         //[Required(ErrorMessage = "Enter Your Name:")]
         //[Display(Name = "name")]
         public string UserName { get; set; }
@@ -17,7 +18,6 @@ namespace E_Chat.Models
         public string Password { get; set; }
         public string Picture { get; set; }
         public List<Contact> MyContacts
-
         {
             get;
             set;
